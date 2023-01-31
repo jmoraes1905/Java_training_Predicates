@@ -19,8 +19,8 @@ public class Program {
 		list.add(new Product("Watch", 50.00));
 		list.add(new Product("Mouse",89.90));
 		
-		//Traditional solution
-		list.removeIf(new ProductPredicate());
+		//Reference method: static method of comparison implemented in the Product class
+		list.removeIf(Product::staticProductPredicate);
 		
 		for(Product p:list) {
 			System.out.println(p);

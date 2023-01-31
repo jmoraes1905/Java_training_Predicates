@@ -28,4 +28,7 @@ public class Product {
 		return this.name + " " + this.price;
 	}
 
+	public static boolean staticProductPredicate(Product p) {
+		return p.getPrice()>=100.00;
+	}
 }

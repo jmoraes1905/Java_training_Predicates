@@ -3,9 +3,9 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
-import util.ProductPredicate;
 
 public class Program {
 
@@ -19,8 +19,11 @@ public class Program {
 		list.add(new Product("Watch", 50.00));
 		list.add(new Product("Mouse",89.90));
 		
-		//Reference method: static method of comparison implemented in the Product class
-		list.removeIf(Product::nonStaticProductPredicate);
+		double max = 100.00;
+		//Declared lambda expression
+		Predicate<Product> pred = p ->p.getPrice() >=max;
+		
+		list.removeIf(pred);
 		
 		for(Product p:list) {
 			System.out.println(p);

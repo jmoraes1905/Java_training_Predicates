@@ -20,7 +20,7 @@ public class Program {
 		list.add(new Product("Mouse",89.90));
 		
 		//Reference method: static method of comparison implemented in the Product class
-		list.removeIf(Product::staticProductPredicate);
+		list.removeIf(Product::nonStaticProductPredicate);
 		
 		for(Product p:list) {
 			System.out.println(p);
